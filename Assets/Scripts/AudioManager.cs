@@ -28,7 +28,7 @@ public class AudioManager : MonoBehaviour
         s.audioSource.Play();
     }
 
-    void SetMasterVolume(float masterVolume)
+    public void SetMasterVolume(float masterVolume)
     {
         foreach(Sound sound in sounds)
         {
