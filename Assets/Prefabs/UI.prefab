@@ -2985,9 +2985,59 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 196482797041301176, guid: 406533ed02004f7488a6eec0a2a86195,
+        type: 3}
+      propertyPath: m_text
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 196482797041301176, guid: 406533ed02004f7488a6eec0a2a86195,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 196482797143704481, guid: 406533ed02004f7488a6eec0a2a86195,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 392.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 196482797143704481, guid: 406533ed02004f7488a6eec0a2a86195,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -350
+      objectReference: {fileID: 0}
     - target: {fileID: 196482797883294538, guid: 406533ed02004f7488a6eec0a2a86195,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 196482798614983696, guid: 406533ed02004f7488a6eec0a2a86195,
+        type: 3}
+      propertyPath: m_text
+      value: Quit Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 196482798614983696, guid: 406533ed02004f7488a6eec0a2a86195,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 196482798614983696, guid: 406533ed02004f7488a6eec0a2a86195,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 196482798614983696, guid: 406533ed02004f7488a6eec0a2a86195,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 196482798614983696, guid: 406533ed02004f7488a6eec0a2a86195,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 196482798614983696, guid: 406533ed02004f7488a6eec0a2a86195,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 339282409364467868, guid: 406533ed02004f7488a6eec0a2a86195,
