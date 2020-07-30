@@ -119,7 +119,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Special Ability
-    descriptiveName: 
+    descriptiveName: Activate Special Ability
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: x

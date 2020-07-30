@@ -26,8 +26,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            jump = true;
-            characterManager.SetJumping(true);
+            if (!crouch)
+            {
+                jump = true;
+                characterManager.SetJumping(true);
+            }
+            
         }
 
         if (Input.GetButtonDown("Crouch"))

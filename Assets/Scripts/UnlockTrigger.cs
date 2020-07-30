@@ -27,6 +27,8 @@ public class UnlockTrigger : MonoBehaviour
             Debug.Log("Character unlocked!", characters[characterIndex]);
             GameObject.FindGameObjectWithTag("NotificationCenter").GetComponent<NotificationCenter>().ShowNotification(notification);
             AudioManager.instance.Play(unlockSound);
+
+            Destroy(gameObject);
         }
     }
 
