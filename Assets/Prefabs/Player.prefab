@@ -1687,7 +1687,7 @@ MonoBehaviour:
   specialAbility: {fileID: 3096263679367392768}
   specialName: Geier
   specialDescription: "Pilotenscheine sind \xFCberbewertet, ein Geier kann sowieso
-    fliegen."
+    fliegen.\\nBenutze w,a,s,d um den Geier zu steuern."
   specialCost: 60
   specialDuration: 7
   specialIcon: {fileID: 21300000, guid: f240dfd4814d34d55a9b033f3c9d8a60, type: 3}
@@ -2723,6 +2723,7 @@ GameObject:
   - component: {fileID: 805539508}
   - component: {fileID: 1308970465115948032}
   - component: {fileID: 1484471311583326673}
+  - component: {fileID: 3488461158517090229}
   m_Layer: 0
   m_Name: Default
   m_TagString: Untagged
@@ -2830,12 +2831,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87527e1a87b3214994ae3ba61f8dc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specialAbility: {fileID: 0}
-  specialName: none
-  specialDescription: '-'
-  specialCost: 1000
-  specialDuration: 1
-  specialIcon: {fileID: 21300000, guid: bb5dc4e831cb87b4cbc6ec5d653faaa7, type: 3}
+  specialAbility: {fileID: 3488461158517090229}
+  specialName: Super Jump
+  specialDescription: "Wenn aktiviert, kann Fox h\xF6her springen."
+  specialCost: 50
+  specialDuration: 10
+  specialIcon: {fileID: 21300000, guid: 4b061cc4720ec52439ba97e43761cd33, type: 3}
 --- !u!114 &805539508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2848,12 +2849,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdac6b006ab1c2646a31c0c9393a099f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Default Character
+  characterName: Fox
   maxHealth: 100
   maxSpecial: 100
   specialAbilityLoadingRate: 2.5
-  specialName: none
-  description: Standard Charakter
+  specialName: Super Jump
+  description: Phieser Phuchs
   isUnlocked: 1
 --- !u!222 &1308970465115948032
 CanvasRenderer:
@@ -2890,6 +2891,19 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &3488461158517090229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6428317731910920369}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26f8e26fc79b3ea458865279bc6583cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  superJumpMultiplier: 1.35
 --- !u!1 &7011440204553215112
 GameObject:
   m_ObjectHideFlags: 0

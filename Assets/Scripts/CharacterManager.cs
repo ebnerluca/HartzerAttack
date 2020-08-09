@@ -71,7 +71,7 @@ public class CharacterManager : MonoBehaviour
 
         currentAnimator = currentCharacter.GetComponent<Animator>();
 
-        GameObject.FindGameObjectWithTag("UI_CharacterName").GetComponent<TextMeshProUGUI>().text = currentCharacter.GetComponent<CharacterSpecifics>().name;
+        GameObject.FindGameObjectWithTag("UI_CharacterName").GetComponent<TextMeshProUGUI>().text = currentCharacter.GetComponent<CharacterSpecifics>().characterName;
 
         specialAbilityManager.SwitchCharacter(currentCharacter);
     }

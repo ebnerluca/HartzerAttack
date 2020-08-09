@@ -23,10 +23,10 @@ public class UIManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            ToggleCharactersMenu();
+            OpenCharactersMenu();
         } else if (Input.GetKeyUp(KeyCode.Tab))
         {
-            ToggleCharactersMenu();
+            CloseCharactersMenu();
         }
 
         if (Input.GetKeyDown(KeyCode.PageDown))
@@ -38,6 +38,13 @@ public class UIManager : MonoBehaviour
 
     public void TogglePauseMenu()
     {
+        if (charactersMenu.activeInHierarchy || devMenu.activeInHierarchy)
+        {
+            charactersMenu.SetActive(false);
+            devMenu.SetActive(false);
+            return;
+        }
+
         pauseMenu.SetActive(!pauseMenu.activeInHierarchy);
 
         /*if (pauseMenu.activeInHierarchy)
@@ -49,8 +56,7 @@ public class UIManager : MonoBehaviour
             menuButton.text = "Menu";
         }*/
 
-        charactersMenu.SetActive(false);
-        devMenu.SetActive(false);
+        
     }
 
     public void ToggleDevMenu()
@@ -69,5 +75,21 @@ public class UIManager : MonoBehaviour
         pauseMenu.SetActive(false);
         devMenu.SetActive(false);
 
+    }
+
+    public void OpenCharactersMenu()
+    {
+        charactersMenu.SetActive(true);
+
+        pauseMenu.SetActive(false);
+        devMenu.SetActive(false);
+    }
+
+    public void CloseCharactersMenu()
+    {
+        charactersMenu.SetActive(false);
+
+        pauseMenu.SetActive(false);
+        devMenu.SetActive(false);
     }
 }

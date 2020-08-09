@@ -57,6 +57,9 @@ public class SpecialAbilityManager : MonoBehaviour
             StopAllCoroutines();
         }
 
+        UI_specialIndicatorBackground.color = specialNotReadyColor;
+        specialReady = false;
+
         currentSpecialAbility = character.GetComponent<SpecialAbility>();
         GameObject.FindGameObjectWithTag("UI_SpecialIcon").GetComponent<Image>().sprite = currentSpecialAbility.specialIcon;
         GameObject.FindGameObjectWithTag("SpecialBar").GetComponent<StatusBar>().SetMarkerValue(currentSpecialAbility.specialCost);

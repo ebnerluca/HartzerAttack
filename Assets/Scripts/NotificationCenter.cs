@@ -7,23 +7,32 @@ using TMPro;
 public class NotificationCenter : MonoBehaviour
 {
     public Image background;
-    public Sprite notificationSprite;
+    public Image notificationImage;
+    public TextMeshProUGUI notificationType;
     public TextMeshProUGUI notificationTitle;
-    public TextMeshProUGUI notificationText;
+    public TextMeshProUGUI notificationDescription;
     public float notificationDuration = 5f;
 
     public GameObject[] children;
 
     private void Start()
     {
-        ToggleVisible();
+        background.enabled = false;
+
+        foreach (GameObject gameObject in children)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     public void ShowNotification(Notification notification)
     {
-        //notificationSprite = notification.sprite;
+        StopAllCoroutines();
+
+        notificationImage.sprite = notification.sprite;
+        notificationType.text = notification.type;
         notificationTitle.text = notification.title;
-        notificationText.text = notification.text;
+        notificationDescription.text = notification.description;
 
         StartCoroutine(NotificationTimer(notification.duration));
     }
@@ -31,13 +40,27 @@ public class NotificationCenter : MonoBehaviour
     IEnumerator NotificationTimer(float notificationDuration)
     {
         //gameObject.SetActive(true);
-        ToggleVisible();
+        //ToggleVisible();
+        background.enabled = true;
+
+        foreach (GameObject gameObject in children)
+        {
+            gameObject.SetActive(true);
+        }
+
         yield return new WaitForSeconds(notificationDuration);
-        ToggleVisible();
+
+        //ToggleVisible();
         //gameObject.SetActive(false);
+        background.enabled = false;
+
+        foreach (GameObject gameObject in children)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
-    private void ToggleVisible()
+    /*private void ToggleVisible()
     {
         background.enabled = !background.enabled;
 
@@ -46,5 +69,5 @@ public class NotificationCenter : MonoBehaviour
             gameObject.SetActive(!gameObject.activeSelf);
         }
 
-    }
+    }*/
 }

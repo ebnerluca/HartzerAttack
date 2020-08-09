@@ -7,6 +7,7 @@ public class UnlockTrigger : MonoBehaviour
     public int unlockIndex = 0;
     public float notificationDuration = 5f;
     public string unlockSound;
+    public string description = "";
 
 
     public void UnlockCharacter(int characterIndex)
@@ -20,9 +21,10 @@ public class UnlockTrigger : MonoBehaviour
             Notification notification = new Notification();
             CharacterSpecifics characterSpecifics = characters[characterIndex].GetComponent<CharacterSpecifics>();
 
+            notification.type = "Character unlocked!";
             notification.title = characterSpecifics.name;
-            notification.text = "Character unlocked!";
             notification.duration = notificationDuration;
+            notification.description = description;
 
             Debug.Log("Character unlocked!", characters[characterIndex]);
             GameObject.FindGameObjectWithTag("NotificationCenter").GetComponent<NotificationCenter>().ShowNotification(notification);
