@@ -9,4 +9,5 @@ public class Notification
     public string description = "Additional Info";
     public Sprite sprite;
     public float duration = 5f;
+    public float scale = 1f;
 }

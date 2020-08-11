@@ -15,6 +15,17 @@ public class NotificationCenter : MonoBehaviour
 
     public GameObject[] children;
 
+    private RectTransform rectTransform;
+    private Vector2 baseOffsetMin;
+    private float baseHeight;
+
+    private void Awake()
+    {
+        rectTransform = GetComponent<RectTransform>();
+        baseOffsetMin = rectTransform.offsetMin;
+        baseHeight = rectTransform.offsetMax.y - rectTransform.offsetMin.y;
+    }
+
     private void Start()
     {
         background.enabled = false;
@@ -32,7 +43,10 @@ public class NotificationCenter : MonoBehaviour
         notificationImage.sprite = notification.sprite;
         notificationType.text = notification.type;
         notificationTitle.text = notification.title;
-        notificationDescription.text = notification.description;
+        notificationDescription.text = notification.description.Replace("\\n", "\n");
+       
+        rectTransform.offsetMin = baseOffsetMin;
+        rectTransform.offsetMin = new Vector2(rectTransform.offsetMin.x, rectTransform.offsetMax.y - notification.scale*baseHeight);
 
         StartCoroutine(NotificationTimer(notification.duration));
     }
@@ -58,6 +72,8 @@ public class NotificationCenter : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+
+        rectTransform.offsetMin = baseOffsetMin;
     }
 
     /*private void ToggleVisible()

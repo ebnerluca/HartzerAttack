@@ -10,14 +10,19 @@ public class UIManager : MonoBehaviour
     public GameObject charactersMenu;
     public GameObject devMenu;
 
-    public TextMeshProUGUI menuButton;
-
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             //pauseMenu.SetActive(!pauseMenu.activeInHierarchy);
+            if (charactersMenu.activeInHierarchy || devMenu.activeInHierarchy)
+            {
+                charactersMenu.SetActive(false);
+                devMenu.SetActive(false);
+                return;
+            }
+
             TogglePauseMenu();
         }
 
@@ -38,25 +43,7 @@ public class UIManager : MonoBehaviour
 
     public void TogglePauseMenu()
     {
-        if (charactersMenu.activeInHierarchy || devMenu.activeInHierarchy)
-        {
-            charactersMenu.SetActive(false);
-            devMenu.SetActive(false);
-            return;
-        }
-
         pauseMenu.SetActive(!pauseMenu.activeInHierarchy);
-
-        /*if (pauseMenu.activeInHierarchy)
-        {
-            menuButton.text = "Close";
-        }
-        else
-        {
-            menuButton.text = "Menu";
-        }*/
-
-        
     }
 
     public void ToggleDevMenu()

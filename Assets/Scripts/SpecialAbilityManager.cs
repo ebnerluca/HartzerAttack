@@ -30,6 +30,10 @@ public class SpecialAbilityManager : MonoBehaviour
             {
                 ActivateSpecialAbility();
             }
+            else
+            {
+                AudioManager.instance.Play("Error");
+            }
         }
         else if (Input.GetKeyDown(KeyCode.X) && specialAbilityActive)
         {

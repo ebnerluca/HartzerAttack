@@ -1039,7 +1039,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2525152109171104708}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2725,7 +2725,7 @@ GameObject:
   - component: {fileID: 1484471311583326673}
   - component: {fileID: 3488461158517090229}
   m_Layer: 0
-  m_Name: Default
+  m_Name: Fox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2833,7 +2833,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   specialAbility: {fileID: 3488461158517090229}
   specialName: Super Jump
-  specialDescription: "Wenn aktiviert, kann Fox h\xF6her springen."
+  specialDescription: "Wenn aktiviert, kann Fox h\xF6her springen.\\nDr\xFCcke \"x\",
+    um SuperJump zu aktivieren."
   specialCost: 50
   specialDuration: 10
   specialIcon: {fileID: 21300000, guid: 4b061cc4720ec52439ba97e43761cd33, type: 3}
@@ -2854,7 +2855,8 @@ MonoBehaviour:
   maxSpecial: 100
   specialAbilityLoadingRate: 2.5
   specialName: Super Jump
-  description: Phieser Phuchs
+  description: "Der standard Charakter.\\nUm als wahrer Hartzer spielen zu k\xF6nnen,
+    musst du erst das Tutorial abschliessen..."
   isUnlocked: 1
 --- !u!222 &1308970465115948032
 CanvasRenderer:
@@ -3296,6 +3298,10 @@ MonoBehaviour:
   circle: {fileID: 7072033630502873128}
   tentacleObject: {fileID: 2525152109171104708}
   tentacleLine: {fileID: 4017628138413909185}
+  armThickness: 0.25
+  armCount: 10
+  armMaterial: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  sortingOrder: 6
 --- !u!95 &2023602948270467844
 Animator:
   serializedVersion: 3

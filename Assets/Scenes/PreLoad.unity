@@ -112,6 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!225 &55488426 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 8464252823499536836, guid: 10235248fae171d4a8ee9d1de760d3c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 124673726}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &124673726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -119,6 +125,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2062005350}
     m_Modifications:
+    - target: {fileID: 448760674962473927, guid: 10235248fae171d4a8ee9d1de760d3c4,
+        type: 3}
+      propertyPath: ingameButtons
+      value: 
+      objectReference: {fileID: 55488426}
     - target: {fileID: 654886732718658526, guid: 10235248fae171d4a8ee9d1de760d3c4,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -313,6 +324,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1562672607750541587, guid: 10235248fae171d4a8ee9d1de760d3c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1680413142653233464, guid: 10235248fae171d4a8ee9d1de760d3c4,
         type: 3}
@@ -759,6 +775,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3595283437310362982, guid: 10235248fae171d4a8ee9d1de760d3c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 3603818138500199550, guid: 10235248fae171d4a8ee9d1de760d3c4,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -973,6 +994,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373873558054864657, guid: 10235248fae171d4a8ee9d1de760d3c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5556796479076423037, guid: 10235248fae171d4a8ee9d1de760d3c4,
         type: 3}
@@ -1409,16 +1435,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -0.00024414062
       objectReference: {fileID: 0}
-    - target: {fileID: 7857587566503428683, guid: 10235248fae171d4a8ee9d1de760d3c4,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1788116078}
-    - target: {fileID: 7857587566503428683, guid: 10235248fae171d4a8ee9d1de760d3c4,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
     - target: {fileID: 7936189851922094521, guid: 10235248fae171d4a8ee9d1de760d3c4,
         type: 3}
       propertyPath: m_Color.r
@@ -1705,6 +1721,11 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: ffaee6f5db7b90a41abfc013a1d0dd5f, type: 3}
     volume: 0.3
     loop: 1
+    audioSource: {fileID: 0}
+  - name: Error
+    audioClip: {fileID: 8300000, guid: 81f390deb0f3c454fbd5f5dda31163e9, type: 3}
+    volume: 0.7
+    loop: 0
     audioSource: {fileID: 0}
 --- !u!4 &1057148089
 Transform:

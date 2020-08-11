@@ -12,6 +12,8 @@ public class CharactersMenu : MonoBehaviour
     public GameObject quickSelection;
     public GameObject characterDetails;
 
+    public CanvasGroup ingameButtons;
+
     private Sprite defaultCharacterSlotAvatar;
 
     private void Awake()
@@ -24,8 +26,17 @@ public class CharactersMenu : MonoBehaviour
         RefreshMenu();
         quickSelection.SetActive(true);
         characterDetails.SetActive(false);
+
+        ingameButtons.alpha = 0;
+        ingameButtons.blocksRaycasts = false;
     }
-  
+
+    private void OnDisable()
+    {
+        ingameButtons.alpha = 1f;
+        ingameButtons.blocksRaycasts = true;
+    }
+
     private void RefreshMenu()
     {
         characters = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CharacterManager>().GetCharacters();

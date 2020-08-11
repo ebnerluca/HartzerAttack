@@ -7,6 +7,7 @@ public class NotificationTrigger : MonoBehaviour
     public string type = "none";
     public string title = "none";
     public string description = "none";
+    public float scale = 1;
     public float duration = 7f;
     public Sprite sprite;
 
@@ -25,6 +26,7 @@ public class NotificationTrigger : MonoBehaviour
         notification.type = type;
         notification.title = title;
         notification.description = description;
+        notification.scale = scale;
         notification.duration = duration;
         notification.sprite = sprite;
 
