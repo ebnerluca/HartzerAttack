@@ -11,11 +11,10 @@ public class NotificationTrigger : MonoBehaviour
     public float duration = 7f;
     public Sprite sprite;
 
-    public GameObject[] hints;
-    public GameObject nextStep;
-
     public bool ready = true;
     public bool destroyAfterTrigger = false;
+
+    public UnityEngine.Events.UnityEvent stuffToDo;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -32,7 +31,7 @@ public class NotificationTrigger : MonoBehaviour
 
         GameObject.FindGameObjectWithTag("NotificationCenter").GetComponent<NotificationCenter>().ShowNotification(notification);
 
-        //nextStep.SetActive(true);
+        stuffToDo.Invoke();
 
         if (destroyAfterTrigger){
             Destroy(gameObject);
@@ -44,18 +43,10 @@ public class NotificationTrigger : MonoBehaviour
     IEnumerator Timer(float timer)
     {
         ready = false;
-        foreach(GameObject hint in hints)
-        {
-            hint.SetActive(true);
-        }
 
         yield return new WaitForSeconds(timer);
 
         ready = true;
-        foreach(GameObject hint in hints)
-        {
-            hint.SetActive(false);
-        }
     }
 
 

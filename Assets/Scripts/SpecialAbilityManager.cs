@@ -22,6 +22,11 @@ public class SpecialAbilityManager : MonoBehaviour
         UI_specialIndicatorBackground = GameObject.FindGameObjectWithTag("UI_SpecialIconFrame").GetComponent<Image>();
     }
 
+    public void ForceStart()
+    {
+        Start();
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.X) && !specialAbilityActive)

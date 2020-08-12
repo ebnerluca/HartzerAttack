@@ -22,6 +22,7 @@ public class CharacterManager : MonoBehaviour
 
     void Start()
     {
+        specialAbilityManager.ForceStart();
         SwitchCharacter(0);
     }
 

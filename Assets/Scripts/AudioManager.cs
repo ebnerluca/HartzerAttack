@@ -11,9 +11,18 @@ public class AudioManager : MonoBehaviour
     
     void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.LogWarning("[AudioManager]: More than one AudioManager detected! Destroying GameObject...");
+            Destroy(gameObject);
+            return;
+        }
 
-        foreach(Sound sound in sounds)
+        foreach (Sound sound in sounds)
         {
             sound.audioSource = gameObject.AddComponent<AudioSource>();
 

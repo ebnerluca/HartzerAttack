@@ -12,6 +12,9 @@ public class Tutorial : MonoBehaviour
     public float welcomeNotificationDelay = 4f;
     public Sprite welcomeNotificationSprite;
 
+    public GameObject marcoUnlock;
+    public float marcoDisappearTimer = 50f;
+
     private PlayerMovement playerMovement;
 
     private void Awake()
@@ -31,6 +34,14 @@ public class Tutorial : MonoBehaviour
         notification.sprite = welcomeNotificationSprite;
 
         StartCoroutine(ShowNotification(welcomeNotificationDelay, notification));
+
+        Invoke("DeleteMarco", marcoDisappearTimer);
+    }
+
+    void DeleteMarco()
+    {
+        Destroy(marcoUnlock);
+        Debug.Log("[Tutorial]: marcoUnlock destroyed.");
     }
 
     private IEnumerator ShowNotification(float delay, Notification notification)
@@ -39,6 +50,16 @@ public class Tutorial : MonoBehaviour
         GameObject.FindGameObjectWithTag("NotificationCenter").GetComponent<NotificationCenter>().ShowNotification(notification);
         yield return new WaitForSeconds(5f);
         playerMovement.enabled = true;
+    }
+
+    public void EndLevel(float delay)
+    {
+        Invoke("EndLevel_", delay);
+    }
+
+    public void EndLevel_()
+    {
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().LoadScene(1);
     }
     
 }

@@ -7,7 +7,10 @@ public class UnlockTrigger : MonoBehaviour
     public int unlockIndex = 0;
     public float notificationDuration = 5f;
     public string unlockSound;
-    public string description = "";
+
+    public string notificationType = "Character unlocked!";
+    public string notificationDescription = "Click on 'Switch' to change characters.";
+    public float notificationScale = 1;
 
 
     public void UnlockCharacter(int characterIndex)
@@ -24,7 +27,8 @@ public class UnlockTrigger : MonoBehaviour
             notification.type = "Character unlocked!";
             notification.title = characterSpecifics.name;
             notification.duration = notificationDuration;
-            notification.description = description;
+            notification.description = notificationDescription;
+            notification.scale = notificationScale;
 
             Debug.Log("Character unlocked!", characters[characterIndex]);
             GameObject.FindGameObjectWithTag("NotificationCenter").GetComponent<NotificationCenter>().ShowNotification(notification);

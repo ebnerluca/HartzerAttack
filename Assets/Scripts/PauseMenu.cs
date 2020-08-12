@@ -45,4 +45,9 @@ public class PauseMenu : MonoBehaviour
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().RespawnPlayer(player);
         }
     }
+
+    public void RestartLevel()
+    {
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
