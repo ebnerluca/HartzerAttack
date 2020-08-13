@@ -12,5 +12,6 @@ public class Terminal : MonoBehaviour
         else if(command == "3") { GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().LoadScene(command); }
         else if(command == "4") { GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().LoadScene(command); }
         else if(command == "unlock all") { UnlockTrigger.UnlockCharactersAll(); }
+        else if(command == "lock all") { UnlockTrigger.LockCharactersAll(); }
     }
 }

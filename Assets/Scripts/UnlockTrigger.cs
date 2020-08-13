@@ -51,6 +51,19 @@ public class UnlockTrigger : MonoBehaviour
         }
     }
 
+    public static void LockCharactersAll() //console only
+    {
+        int k = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CharacterManager>().GetCharacters().Count;
+        List<GameObject> characters = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CharacterManager>().GetCharacters();
+
+        for (int i = 0; i < k; i++)
+        {
+            characters[i].GetComponent<CharacterSpecifics>().isUnlocked = false;
+        }
+
+        characters[0].GetComponent<CharacterSpecifics>().isUnlocked = true; //default character must remain locked
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         UnlockCharacter(unlockIndex);
