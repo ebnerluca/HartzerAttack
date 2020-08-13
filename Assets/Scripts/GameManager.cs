@@ -92,8 +92,6 @@ public class GameManager : MonoBehaviour
 
     public void LoadGame()
     {
-        return; //ghettofix
-
         if (GameObject.FindGameObjectWithTag("Player") == null) { return; }
 
         SaveData data = SaveSystem.Load();

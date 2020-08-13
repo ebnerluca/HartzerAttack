@@ -1672,7 +1672,7 @@ MonoBehaviour:
   specialName: Geier
   description: "Trader, Gamer, Bastard. \\nGetreu diesem Motto zieht er durchs Leben
     und hinterl\xE4sst eine Schneise der Verw\xFCstung. \\nEminem for President!"
-  isUnlocked: 1
+  isUnlocked: 0
 --- !u!114 &1202058943235864173
 MonoBehaviour:
   m_ObjectHideFlags: 0
