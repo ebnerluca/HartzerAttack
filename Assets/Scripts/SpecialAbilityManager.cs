@@ -15,12 +15,25 @@ public class SpecialAbilityManager : MonoBehaviour
     public Color specialReadyColor;
     public Color specialNotReadyColor;
     public bool specialReady = false;
+
+    private StatusBar specialAbilityBar;
     
 
     void Start()
     {
         //UI_specialIndicatorBackground = GameObject.FindGameObjectWithTag("UI_SpecialIconFrame").GetComponent<Image>();
         playerStats.ForceStart();
+
+        if (GameObject.FindGameObjectWithTag("SpecialAbilityBar") != null)
+        {
+            specialAbilityBar = GameObject.FindGameObjectWithTag("SpecialAbilityBar").GetComponent<StatusBar>();
+            //specialAbilityBar.Initialize(Mathf.Clamp(playerStats.GetSpecial(), 0f, currentSpecialAbility.specialCost), currentSpecialAbility.specialCost);
+        }
+        else
+        {
+            Debug.LogError("[SpecialAbilityManager]: specialAbilityBar not found. Script disabled!");
+            enabled = false;
+        }
     }
 
     public void ForceStart()
@@ -47,6 +60,8 @@ public class SpecialAbilityManager : MonoBehaviour
             StopAllCoroutines();
         }
 
+
+        specialAbilityBar.SetValue(Mathf.Clamp(playerStats.GetSpecial(), 0f, currentSpecialAbility.specialCost));
         if(playerStats.GetSpecial() >= currentSpecialAbility.specialCost && !specialReady)
         {
             //UI_specialIndicatorBackground.color = specialReadyColor;
@@ -73,6 +88,7 @@ public class SpecialAbilityManager : MonoBehaviour
         currentSpecialAbility = character.GetComponent<SpecialAbility>();
         GameObject.FindGameObjectWithTag("UI_SpecialIcon").GetComponent<Image>().sprite = currentSpecialAbility.specialIcon;
         GameObject.FindGameObjectWithTag("SpecialBar").GetComponent<StatusBar>().SetMarkerValue(currentSpecialAbility.specialCost);
+        specialAbilityBar.Initialize(Mathf.Clamp(playerStats.GetSpecial(), 0f, currentSpecialAbility.specialCost), currentSpecialAbility.specialCost);
     }
 
     void ActivateSpecialAbility()
