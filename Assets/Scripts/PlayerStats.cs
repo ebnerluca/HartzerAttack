@@ -25,6 +25,11 @@ public class PlayerStats : MonoBehaviour
         health = maxHealth;
         special = maxSpecial;
 
+    }
+
+    void Start()
+    {
+
         if (GameObject.FindGameObjectWithTag("HealthBar") != null)
         {
             healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<StatusBar>();
@@ -48,29 +53,9 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    void Start()
+    public void ForceStart()
     {
-        //if (GameObject.FindGameObjectWithTag("HealthBar") != null)
-        //{
-        //    healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<StatusBar>();
-        //    healthBar.Initialize(health, maxHealth);
-        //}
-        //else
-        //{
-        //    Debug.LogError("[PlayerStats]: healthBar not found. Script disabled!");
-        //    enabled = false;
-        //}
-
-        //if (GameObject.FindGameObjectWithTag("SpecialBar") != null)
-        //{
-        //    specialBar = GameObject.FindGameObjectWithTag("SpecialBar").GetComponent<StatusBar>();
-        //    specialBar.Initialize(special, maxSpecial);
-        //}
-        //else
-        //{
-        //    Debug.LogError("[PlayerStats]: specialBar not found. Script disabled!");
-        //    enabled = false;
-        //}
+        Start();
     }
 
     private void FixedUpdate()

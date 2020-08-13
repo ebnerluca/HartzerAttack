@@ -19,7 +19,8 @@ public class SpecialAbilityManager : MonoBehaviour
 
     void Start()
     {
-        UI_specialIndicatorBackground = GameObject.FindGameObjectWithTag("UI_SpecialIconFrame").GetComponent<Image>();
+        //UI_specialIndicatorBackground = GameObject.FindGameObjectWithTag("UI_SpecialIconFrame").GetComponent<Image>();
+        playerStats.ForceStart();
     }
 
     public void ForceStart()
@@ -48,11 +49,11 @@ public class SpecialAbilityManager : MonoBehaviour
 
         if(playerStats.GetSpecial() >= currentSpecialAbility.specialCost && !specialReady)
         {
-            UI_specialIndicatorBackground.color = specialReadyColor;
+            //UI_specialIndicatorBackground.color = specialReadyColor;
             specialReady = true;
         } else if(playerStats.GetSpecial() < currentSpecialAbility.specialCost && specialReady)
         {
-            UI_specialIndicatorBackground.color = specialNotReadyColor;
+            //UI_specialIndicatorBackground.color = specialNotReadyColor;
             specialReady = false;
         }
 
@@ -66,7 +67,7 @@ public class SpecialAbilityManager : MonoBehaviour
             StopAllCoroutines();
         }
 
-        UI_specialIndicatorBackground.color = specialNotReadyColor;
+        //UI_specialIndicatorBackground.color = specialNotReadyColor;
         specialReady = false;
 
         currentSpecialAbility = character.GetComponent<SpecialAbility>();
@@ -84,7 +85,7 @@ public class SpecialAbilityManager : MonoBehaviour
             characterManager.SetSpecialAbility(true);
 
             specialReady = false;
-            UI_specialIndicatorBackground.color = specialNotReadyColor;
+            //UI_specialIndicatorBackground.color = specialNotReadyColor;
 
             StartCoroutine(SpecialAbilityTimer(currentSpecialAbility.specialDuration));
 
