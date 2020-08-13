@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnlockTrigger : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class UnlockTrigger : MonoBehaviour
             notification.duration = notificationDuration;
             notification.description = notificationDescription;
             notification.scale = notificationScale;
+            notification.sprite = characters[characterIndex].GetComponent<Image>().sprite;
 
             Debug.Log("Character unlocked!", characters[characterIndex]);
             GameObject.FindGameObjectWithTag("NotificationCenter").GetComponent<NotificationCenter>().ShowNotification(notification);

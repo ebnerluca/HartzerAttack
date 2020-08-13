@@ -59,7 +59,7 @@ public class Tutorial : MonoBehaviour
 
     public void EndLevel_()
     {
-        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().LoadScene(1);
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1);
     }
     
 }

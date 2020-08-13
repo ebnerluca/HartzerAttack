@@ -23,11 +23,12 @@ public static class SaveSystem
     public static SaveData Load()
     {
         string path = Application.persistentDataPath + "/savedata.shesh";
+        FileStream stream = new FileStream(path, FileMode.Open);
 
-        if (File.Exists(path))
+        if (File.Exists(path) && stream.Length > 0)
         {
             BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
+            //FileStream stream = new FileStream(path, FileMode.Open);
 
             SaveData data = formatter.Deserialize(stream) as SaveData;
 
@@ -38,8 +39,13 @@ public static class SaveSystem
         }
         else
         {
-            Debug.LogError("SaveData in " + path + " not found.");
-            return null;
+            Debug.LogError("Exception caught in SaveSystem.Load(). Creating new SaveData...");
+
+            BinaryFormatter formatter = new BinaryFormatter();
+            SaveData data = new SaveData(GameObject.FindGameObjectWithTag("Player"));
+            formatter.Serialize(stream, data);
+            stream.Close();
+            return data;
         }
     }
 }

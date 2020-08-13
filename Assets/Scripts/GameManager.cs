@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
 
     public void RespawnPlayer(GameObject player)
     {
-        //Transform respawnPoint = respawnPoints[Random.Range(0, respawnPoints.Count)];
+        Transform respawnPoint = respawnPoints[Random.Range(0, respawnPoints.Count)];
         player.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
         player.transform.SetPositionAndRotation(currentRespawnPoint.position, player.transform.rotation);
 
@@ -85,11 +85,16 @@ public class GameManager : MonoBehaviour
 
     public void SaveGame()
     {
+        if (GameObject.FindGameObjectWithTag("Player") == null) { return; }
+
         SaveSystem.Save();
     }
 
     public void LoadGame()
     {
+
+        if (GameObject.FindGameObjectWithTag("Player") == null) { return; }
+
         SaveData data = SaveSystem.Load();
 
         List<GameObject> characters = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CharacterManager>().GetCharacters();

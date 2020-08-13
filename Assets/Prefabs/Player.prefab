@@ -1746,6 +1746,7 @@ MonoBehaviour:
   smoothTime: 0.3
   eagleSoundEffects: {fileID: 6149960971100844544}
   eagleScream: {fileID: 4587838151825286349}
+  marcoFace: {fileID: 6091336541931807511}
 --- !u!95 &89220975348361640
 Animator:
   serializedVersion: 3

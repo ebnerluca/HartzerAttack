@@ -19,6 +19,8 @@ public class Eagle : MonoBehaviour
     public GameObject eagleSoundEffects;
     public AudioSource eagleScream;
 
+    public GameObject marcoFace;
+
     private void OnEnable()
     {
         defaultGravity = rb2D.gravityScale;
@@ -28,6 +30,8 @@ public class Eagle : MonoBehaviour
         Flip(); //ghettofix
         eagleSoundEffects.SetActive(true);
         eagleScream.Play();
+
+        marcoFace.SetActive(false);
     }
 
     private void OnDisable()
@@ -36,6 +40,8 @@ public class Eagle : MonoBehaviour
         rb2D.gravityScale = defaultGravity;
         Flip(); //ghettofix
         eagleSoundEffects.SetActive(false);
+
+        marcoFace.SetActive(true);
     }
 
     // Update is called once per frame
