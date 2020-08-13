@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         
         if(GameObject.FindGameObjectWithTag("Player") != null)
         {
-            //LoadGame(); //commented out because of WebGL bug
+            LoadGame();
             if (currentRespawnPoint == null) { Debug.LogWarning("[GameManager]: Level start not set!"); }
         }
     }
@@ -92,6 +92,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadGame()
     {
+        return; //ghettofix
 
         if (GameObject.FindGameObjectWithTag("Player") == null) { return; }
 
