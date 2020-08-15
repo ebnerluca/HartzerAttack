@@ -11,9 +11,9 @@ public class SpecialAbilityManager : MonoBehaviour
     public CharacterManager characterManager;
     public PlayerStats playerStats;
 
-    private Image UI_specialIndicatorBackground;
     public Color specialReadyColor;
     public Color specialNotReadyColor;
+    public Color specialActiveColor;
     public bool specialReady = false;
 
     private StatusBar specialAbilityBar;
@@ -21,13 +21,11 @@ public class SpecialAbilityManager : MonoBehaviour
 
     void Start()
     {
-        //UI_specialIndicatorBackground = GameObject.FindGameObjectWithTag("UI_SpecialIconFrame").GetComponent<Image>();
         playerStats.ForceStart();
 
         if (GameObject.FindGameObjectWithTag("SpecialAbilityBar") != null)
         {
             specialAbilityBar = GameObject.FindGameObjectWithTag("SpecialAbilityBar").GetComponent<StatusBar>();
-            //specialAbilityBar.Initialize(Mathf.Clamp(playerStats.GetSpecial(), 0f, currentSpecialAbility.specialCost), currentSpecialAbility.specialCost);
         }
         else
         {
@@ -60,15 +58,22 @@ public class SpecialAbilityManager : MonoBehaviour
             StopAllCoroutines();
         }
 
-
-        specialAbilityBar.SetValue(Mathf.Clamp(playerStats.GetSpecial(), 0f, currentSpecialAbility.specialCost));
-        if(playerStats.GetSpecial() >= currentSpecialAbility.specialCost && !specialReady)
+        if (!specialAbilityActive)
         {
-            //UI_specialIndicatorBackground.color = specialReadyColor;
+            specialAbilityBar.SetValue(Mathf.Clamp(playerStats.GetSpecial(), 0f, currentSpecialAbility.specialCost));
+        }
+        else
+        {
+            specialAbilityBar.SetValue(specialAbilityBar.slider.value -= (specialAbilityBar.slider.maxValue / currentSpecialAbility.specialDuration) * Time.deltaTime);
+        }
+
+        if (playerStats.GetSpecial() >= currentSpecialAbility.specialCost && !specialReady)
+        {
+            specialAbilityBar.slider.fillRect.GetComponent<Image>().color = specialReadyColor;
             specialReady = true;
         } else if(playerStats.GetSpecial() < currentSpecialAbility.specialCost && specialReady)
         {
-            //UI_specialIndicatorBackground.color = specialNotReadyColor;
+            //specialAbilityBar.slider.fillRect.GetComponent<Image>().color = specialNotReadyColor;
             specialReady = false;
         }
 
@@ -82,7 +87,7 @@ public class SpecialAbilityManager : MonoBehaviour
             StopAllCoroutines();
         }
 
-        //UI_specialIndicatorBackground.color = specialNotReadyColor;
+        specialAbilityBar.slider.fillRect.GetComponent<Image>().color = specialNotReadyColor;
         specialReady = false;
 
         currentSpecialAbility = character.GetComponent<SpecialAbility>();
@@ -100,8 +105,7 @@ public class SpecialAbilityManager : MonoBehaviour
             playerStats.specialAbilityActive = true;
             characterManager.SetSpecialAbility(true);
 
-            specialReady = false;
-            //UI_specialIndicatorBackground.color = specialNotReadyColor;
+            specialAbilityBar.slider.fillRect.GetComponent<Image>().color = specialActiveColor;
 
             StartCoroutine(SpecialAbilityTimer(currentSpecialAbility.specialDuration));
 
@@ -116,6 +120,9 @@ public class SpecialAbilityManager : MonoBehaviour
             specialAbilityActive = false;
             playerStats.specialAbilityActive = false;
             characterManager.SetSpecialAbility(false);
+
+            specialReady = false;
+            specialAbilityBar.slider.fillRect.GetComponent<Image>().color = specialNotReadyColor;
         }
     }
 

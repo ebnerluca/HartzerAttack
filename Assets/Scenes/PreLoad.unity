@@ -1000,6 +1000,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 5381811124235356983, guid: 10235248fae171d4a8ee9d1de760d3c4,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381811124235356983, guid: 10235248fae171d4a8ee9d1de760d3c4,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5556796479076423037, guid: 10235248fae171d4a8ee9d1de760d3c4,
         type: 3}
       propertyPath: m_textInfo.characterCount

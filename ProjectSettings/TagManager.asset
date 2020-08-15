@@ -15,6 +15,7 @@ TagManager:
   - UI_SpecialIcon
   - UI_SpecialIconFrame
   - UI_SpecialCostMarker
+  - SpecialAbilityBar
   layers:
   - Default
   - TransparentFX

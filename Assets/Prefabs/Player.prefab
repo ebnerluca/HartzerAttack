@@ -3087,7 +3087,8 @@ MonoBehaviour:
   characterManager: {fileID: 7284264764456689364}
   playerStats: {fileID: 1461650301}
   specialReadyColor: {r: 1, g: 0.7372549, b: 0, a: 0.6862745}
-  specialNotReadyColor: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 0.5058824}
+  specialNotReadyColor: {r: 1, g: 1, b: 1, a: 0.5058824}
+  specialActiveColor: {r: 1, g: 0.7372549, b: 0, a: 1}
   specialReady: 0
 --- !u!1 &7243627574829876449
 GameObject:
