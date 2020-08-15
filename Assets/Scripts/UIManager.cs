@@ -48,35 +48,33 @@ public class UIManager : MonoBehaviour
 
     public void ToggleDevMenu()
     {
-        devMenu.SetActive(!devMenu.activeInHierarchy);
-
         pauseMenu.SetActive(false);
         charactersMenu.SetActive(false);
-        
+
+        devMenu.SetActive(!devMenu.activeInHierarchy);
     }
 
     public void ToggleCharactersMenu()
     {
-        charactersMenu.SetActive(!charactersMenu.activeInHierarchy);
-
         pauseMenu.SetActive(false);
         devMenu.SetActive(false);
 
+        charactersMenu.SetActive(!charactersMenu.activeInHierarchy);
     }
 
     public void OpenCharactersMenu()
     {
-        charactersMenu.SetActive(true);
-
         pauseMenu.SetActive(false);
         devMenu.SetActive(false);
+
+        charactersMenu.SetActive(true);
     }
 
     public void CloseCharactersMenu()
     {
-        charactersMenu.SetActive(false);
-
         pauseMenu.SetActive(false);
         devMenu.SetActive(false);
+
+        charactersMenu.SetActive(false);
     }
 }

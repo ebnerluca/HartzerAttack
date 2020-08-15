@@ -840,16 +840,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3727853234625859961, guid: 10235248fae171d4a8ee9d1de760d3c4,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1788116078}
-    - target: {fileID: 3727853234625859961, guid: 10235248fae171d4a8ee9d1de760d3c4,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
     - target: {fileID: 3859724802114978508, guid: 10235248fae171d4a8ee9d1de760d3c4,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1836,12 +1826,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1788116078 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3074449515759732358, guid: 10235248fae171d4a8ee9d1de760d3c4,
-    type: 3}
-  m_PrefabInstance: {fileID: 124673726}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2062005348
 GameObject:
   m_ObjectHideFlags: 0

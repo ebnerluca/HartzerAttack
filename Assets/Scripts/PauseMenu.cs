@@ -19,12 +19,17 @@ public class PauseMenu : MonoBehaviour
 
         ingameButtons.alpha = 0;
         ingameButtons.blocksRaycasts = false;
+
+        Time.timeScale = 0;
     }
 
     private void OnDisable()
     {
         ingameButtons.alpha = 1;
         ingameButtons.blocksRaycasts = true;
+
+        Time.timeScale = 1;
+
     }
     public void GoToMainMenu()
     {

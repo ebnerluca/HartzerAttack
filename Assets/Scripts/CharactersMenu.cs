@@ -29,12 +29,16 @@ public class CharactersMenu : MonoBehaviour
 
         ingameButtons.alpha = 0;
         ingameButtons.blocksRaycasts = false;
+
+        Time.timeScale = 0;
     }
 
     private void OnDisable()
     {
         ingameButtons.alpha = 1f;
         ingameButtons.blocksRaycasts = true;
+
+        Time.timeScale = 1;
     }
 
     private void RefreshMenu()
