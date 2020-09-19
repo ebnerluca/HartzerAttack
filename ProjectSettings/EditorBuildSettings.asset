@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: f22549781bd4d134b96ac02fbd616dee
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SurvivalScene.unity
     guid: 4258472fb4f977f4598c21da5e4b39f4
   m_configObjects: {}
