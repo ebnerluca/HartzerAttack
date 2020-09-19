@@ -49,6 +49,11 @@ public class NotificationCenter : MonoBehaviour
         rectTransform.offsetMin = new Vector2(rectTransform.offsetMin.x, rectTransform.offsetMax.y - notification.scale*baseHeight);
 
         StartCoroutine(NotificationTimer(notification.duration));
+
+        if (notification.disableMovement)
+        {
+            StartCoroutine(DisableMovementTimer(notification.disableMovementTimer));
+        }
     }
 
     IEnumerator NotificationTimer(float notificationDuration)
@@ -74,6 +79,17 @@ public class NotificationCenter : MonoBehaviour
         }
 
         rectTransform.offsetMin = baseOffsetMin;
+
+    }
+
+    IEnumerator DisableMovementTimer(float duration)
+    {
+        PlayerMovement playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        playerMovement.enabled = false;
+
+        yield return new WaitForSeconds(duration);
+
+        playerMovement.enabled = true;
     }
 
     /*private void ToggleVisible()

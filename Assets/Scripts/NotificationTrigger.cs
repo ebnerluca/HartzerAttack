@@ -10,11 +10,15 @@ public class NotificationTrigger : MonoBehaviour
     public float scale = 1;
     public float duration = 7f;
     public Sprite sprite;
+    public bool disableMovement = false;
+    public float disableMovementTimer = 0f;
 
     public bool ready = true;
     public bool destroyAfterTrigger = false;
 
     public UnityEngine.Events.UnityEvent stuffToDo;
+    public UnityEngine.Events.UnityEvent stuffToDoAfter;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -28,25 +32,28 @@ public class NotificationTrigger : MonoBehaviour
         notification.scale = scale;
         notification.duration = duration;
         notification.sprite = sprite;
+        notification.disableMovement = disableMovement;
+        notification.disableMovementTimer = disableMovementTimer;
 
         GameObject.FindGameObjectWithTag("NotificationCenter").GetComponent<NotificationCenter>().ShowNotification(notification);
 
-        stuffToDo.Invoke();
-
-        if (destroyAfterTrigger){
-            Destroy(gameObject);
-        }else {
-            StartCoroutine(Timer(duration));
-        }
+        StartCoroutine(Timer(duration));       
     }
 
     IEnumerator Timer(float timer)
     {
         ready = false;
+        stuffToDo.Invoke();
 
         yield return new WaitForSeconds(timer);
 
+        if (destroyAfterTrigger)
+        {
+            Destroy(gameObject);
+        }
+
         ready = true;
+        stuffToDoAfter.Invoke();
     }
 
 

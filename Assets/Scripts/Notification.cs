@@ -10,4 +10,6 @@ public class Notification
     public Sprite sprite;
     public float duration = 5f;
     public float scale = 1f;
+    public bool disableMovement = false;
+    public float disableMovementTimer = 0f;
 }

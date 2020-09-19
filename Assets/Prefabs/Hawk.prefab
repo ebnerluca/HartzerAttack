@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 5616884755523033615}
   m_Layer: 0
   m_Name: Hawk
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   damage: 20
+  isParalyzed: 0
   bounceForce: 10
   headJumpBonus: 15
 --- !u!61 &2061431869836633671

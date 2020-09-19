@@ -1767,6 +1767,11 @@ MonoBehaviour:
     volume: 0.7
     loop: 0
     audioSource: {fileID: 0}
+  - name: Bre_Schrei
+    audioClip: {fileID: 8300000, guid: 156d041ff2ea8624fac1da5a75fd2e02, type: 3}
+    volume: 0.7
+    loop: 0
+    audioSource: {fileID: 0}
 --- !u!4 &1057148089
 Transform:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ TagManager:
   - UI_SpecialIconFrame
   - UI_SpecialCostMarker
   - SpecialAbilityBar
+  - Enemy
   layers:
   - Default
   - TransparentFX

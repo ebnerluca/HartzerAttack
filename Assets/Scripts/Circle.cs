@@ -18,16 +18,22 @@ public class Circle : MonoBehaviour
         line.positionCount = vertexPoints;
     }
 
+    private void OnEnable()
+    {
+        Update();
+        line.enabled = true;
+    }
+
+    public void OnDisable()
+    {
+        line.enabled = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
-
-        ////testing
-        //angleIncrement = 2*Mathf.PI / (float)vertexPoints;
-        //line.positionCount = vertexPoints;
-        ////end testing
-
         Vector3 position = new Vector3(0f, 0f, 0f);
+
         for(int i = 0; i < vertexPoints; i++)
         {
             position.x = transform.position.x + radius * Mathf.Cos(angleIncrement * i);
